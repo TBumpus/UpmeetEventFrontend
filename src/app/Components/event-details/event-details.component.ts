@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/Services/api.service';
 import { Event } from 'src/app/Interfaces/event';
 
