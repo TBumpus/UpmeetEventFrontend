@@ -11,15 +11,21 @@ import { Event } from 'src/app/Interfaces/event';
 })
 export class EventDetailsComponent implements OnInit {
 
-  constructor(private service:ApiService) { }
+  constructor(private service:ApiService, private route:ActivatedRoute) { }
 
   eventArray:Event[] = [];
+  eventToFave:Event | undefined;
 
   ngOnInit(): void {
     this.getAllEvents();
+   
   }
 
   getAllEvents(){
     this.service.getAllEvents().subscribe((data:Event[]) => this.eventArray = data);
+  }
+
+  addEventToFavorites(eventId:number){
+    this.service.addEventToFavorites(eventId).subscribe((data:Event) => this.eventToFave = data);
   }
 }

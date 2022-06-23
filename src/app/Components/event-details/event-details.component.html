@@ -27,7 +27,7 @@
                             <td>{{event.title}}</td>
                             <td>{{event.details}}</td>
                             <td>{{event.price}}</td>
-                            <td><button class="btn btn-secondary">Favorite</button></td>
+                            <td><button class="btn btn-secondary" (click)="addEventToFavorites(event.eventId)">Favorite</button></td>
                         </tr>
                     
                 </tbody>
