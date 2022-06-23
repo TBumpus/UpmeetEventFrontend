@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs'; //what exactly is this again?
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Event } from '../Interfaces/event';
 
@@ -16,4 +16,10 @@ export class ApiService {
 
     return events;
   }
+
+  addEventToFavorites(eventId:number){ 
+    let eventToFav = this.client.post<Event>(environment.apiUrl + 'Event/AddEventToFavorites', {eventId:eventId, userId:1});
+    return eventToFav;
+  }
+
 }
